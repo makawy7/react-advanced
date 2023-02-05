@@ -1,9 +1,9 @@
-import UseEffectFetchData from "./components/UseEffectFetchData";
+import ConditionalRendering from "./components/ConditionalRendering";
 
 function App() {
   return (
     <div className="container">
-      <UseEffectFetchData />
+      <ConditionalRendering />
     </div>
   );
 }
