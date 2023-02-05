@@ -1,9 +1,9 @@
-import UseStateBasics from "./components/UseStateBasics";
+import UseStateArray from "./components/UseStateArray";
 
 function App() {
   return (
     <div className="container">
-      <UseStateBasics />
+      <UseStateArray />
     </div>
   );
 }
