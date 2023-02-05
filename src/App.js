@@ -1,9 +1,9 @@
-import ConditionalRendering from "./components/ConditionalRendering";
+import ShortCircuit from "./components/ShortCircuit";
 
 function App() {
   return (
     <div className="container">
-      <ConditionalRendering />
+      <ShortCircuit />
     </div>
   );
 }
