@@ -1,9 +1,9 @@
-import UseStateCounter from "./components/UseStateCounter";
+import UseEffectBasics from "./components/UseEffectBasics";
 
 function App() {
   return (
     <div className="container">
-      <UseStateCounter />
+      <UseEffectBasics />
     </div>
   );
 }
