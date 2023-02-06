@@ -1,9 +1,9 @@
-import ConditionalShowHide from "./components/ConditionalShowHide";
+import ControlledInputs from "./components/ControlledInputs";
 
 function App() {
   return (
     <div className="container">
-      <ConditionalShowHide />
+      <ControlledInputs />
     </div>
   );
 }
