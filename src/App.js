@@ -1,9 +1,9 @@
-import ShortCircuit from "./components/ShortCircuit";
+import ConditionalShowHide from "./components/ConditionalShowHide";
 
 function App() {
   return (
     <div className="container">
-      <ShortCircuit />
+      <ConditionalShowHide />
     </div>
   );
 }
