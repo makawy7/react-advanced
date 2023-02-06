@@ -1,9 +1,9 @@
-import MultipleInputs from "./components/MultipleInputs";
+import UseRefBasics from "./components/UseRefBasics";
 
 function App() {
   return (
     <div className="container">
-      <MultipleInputs />
+      <UseRefBasics />
     </div>
   );
 }
