@@ -1,9 +1,9 @@
-import ControlledInputs from "./components/ControlledInputs";
+import MultipleInputs from "./components/MultipleInputs";
 
 function App() {
   return (
     <div className="container">
-      <ControlledInputs />
+      <MultipleInputs />
     </div>
   );
 }
