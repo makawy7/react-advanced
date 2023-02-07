@@ -1,9 +1,9 @@
-import ContextAPI from "./components/ContextAPI";
+import CustomHook from "./components/CustomHook";
 
 function App() {
   return (
     <div className="container">
-      <ContextAPI />
+      <CustomHook />
     </div>
   );
 }
