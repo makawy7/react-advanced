@@ -1,9 +1,9 @@
-import CustomHook from "./components/CustomHook";
+import PropTypesBasics from "./components/PropTypesBasics";
 
 function App() {
   return (
     <div className="container">
-      <CustomHook />
+      <PropTypesBasics />
     </div>
   );
 }
