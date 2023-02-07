@@ -1,9 +1,9 @@
-import PropDrilling from "./components/PropDrilling";
+import ContextAPI from "./components/ContextAPI";
 
 function App() {
   return (
     <div className="container">
-      <PropDrilling />
+      <ContextAPI />
     </div>
   );
 }
