@@ -1,9 +1,9 @@
-import UseReducer from "./components/UseReducer";
+import PropDrilling from "./components/PropDrilling";
 
 function App() {
   return (
     <div className="container">
-      <UseReducer />
+      <PropDrilling />
     </div>
   );
 }
