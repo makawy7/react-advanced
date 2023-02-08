@@ -1,9 +1,9 @@
-import PropTypesBasics from "./components/PropTypesBasics";
+import MemoAndCallback from "./components/MemoAndCallback";
 
 function App() {
   return (
     <div className="container">
-      <PropTypesBasics />
+      <MemoAndCallback />
     </div>
   );
 }

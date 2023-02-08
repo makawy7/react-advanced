@@ -6,7 +6,7 @@ export const useFetch = (url) => {
   useEffect(() => {
     const getProducts = async () => {
       const response = await fetch(url);
-      console.log(response.status);
+      // console.log(response.status);
       const myProducts = await response.json();
       setProducts(myProducts);
       setLoading(false);
