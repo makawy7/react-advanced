@@ -10,6 +10,16 @@ const url = "https://course-api.com/javascript-store-products";
 function MemoAndCallback() {
   const { products } = useFetch(url);
   const [counter, setCounter] = useState(0);
+  const [cart, setCart] = useState(0);
+
+  // with each re-render addToCart() is re-created, which is passed as a prop to other components
+  // that would make then also re-render even with the use if memo, because memo watch for prop changes.
+  // useCallback will make addToCart function only gets re-created only when the cart value is changed and not any other state.
+  // if we don't pass any value in the dependency array [] the addToCart function is never re-created and the state value will not update.
+  const addToCart = useCallback(() => {
+    setCart(cart + 1);
+  }, [cart]);
+
   useEffect(() => {
     console.count("MemoAndCallback render!");
   });
@@ -19,25 +29,26 @@ function MemoAndCallback() {
       <button className="btn" onClick={() => setCounter(counter + 1)}>
         Click me
       </button>
-      <List products={products} />
+      <h2 style={{ marginTop: "3rem" }}>cart: {cart}</h2>
+      <List products={products} addToCart={addToCart} />
     </>
   );
 }
 
-const List = memo(({ products }) => {
+const List = memo(({ products, addToCart }) => {
   useEffect(() => {
     console.count("List initial!");
   });
   return (
     <section className="products">
       {products.map((product) => (
-        <Product key={product.id} {...product} />
+        <Product key={product.id} {...product} addToCart={addToCart} />
       ))}
     </section>
   );
 });
 
-function Product({ fields }) {
+function Product({ fields, addToCart }) {
   useEffect(() => {
     console.count("Product initial!");
   });
@@ -48,7 +59,7 @@ function Product({ fields }) {
     <article className="product">
       <img src={image} alt={name} />
       <h4>{name}</h4>
-      <button>add to cart</button>
+      <button onClick={addToCart}>add to cart</button>
     </article>
   );
 }
