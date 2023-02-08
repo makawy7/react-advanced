@@ -2,6 +2,18 @@ import { useState, memo, useMemo, useCallback, useEffect } from "react";
 import { useFetch } from "./useFetch";
 
 const url = "https://course-api.com/javascript-store-products";
+const getMostExpensive = (data) => {
+  console.log("getMostExpensive");
+  return (
+    data.reduce((acc, current) => {
+      const price = current.fields.price;
+      if (price >= acc) {
+        acc = price;
+      }
+      return acc;
+    }, 0) / 100
+  );
+};
 
 // any state change triggers a re-render
 // I think: useEffect(()=>{}, []) only ignores re-render when the state changes, doesn't mean a re-render not happening
@@ -11,6 +23,9 @@ function MemoAndCallback() {
   const { products } = useFetch(url);
   const [counter, setCounter] = useState(0);
   const [cart, setCart] = useState(0);
+
+  // mostExpensive() will not re-renders unless the value of products has changed
+  const mostExpensive = useMemo(() => getMostExpensive(products), [products]);
 
   // with each re-render addToCart() is re-created, which is passed as a prop to other components
   // that would make then also re-render even with the use if memo, because memo watch for prop changes.
@@ -30,6 +45,7 @@ function MemoAndCallback() {
         Click me
       </button>
       <h2 style={{ marginTop: "3rem" }}>cart: {cart}</h2>
+      <h2>Most Expensive: ${mostExpensive}</h2>
       <List products={products} addToCart={addToCart} />
     </>
   );
